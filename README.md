@@ -1,4 +1,4 @@
-# 📚 NotesLM - Student Notes RAG Assistant
+# NotesLM - Student Notes RAG Assistant
 
 An AI-powered assistant that lets students upload their notes and ask questions about them. Built using a Retrieval-Augmented Generation (RAG) pipeline, so answers come directly from the uploaded content instead of the model's general knowledge.
 
