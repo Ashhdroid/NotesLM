@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f5f7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+.header p {
+  margin: 0 0 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.dropzone {
+  border: 2px dashed #c7cbd1;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dropzone.active {
+  border-color: #4a7dff;
+  background: #eef3ff;
+}
+
+.dropzone.done {
+  border-color: #34c759;
+}
+
+.dropzone.error {
+  border-color: #ff4d4f;
+}
+
+.dropzone-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dropzone .hint {
+  color: #999;
+  font-size: 0.8rem;
+  margin: 4px 0 0;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.status-dot.uploading {
+  background: #f5a623;
+  animation: pulse 1s infinite;
+}
+
+.status-dot.done {
+  background: #34c759;
+}
+
+.status-dot.error {
+  background: #ff4d4f;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.file-name {
+  font-weight: 600;
+}
+
+.status-text {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.status-msg {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+  color: #666;
+}
+
+.status-msg.error {
+  color: #ff4d4f;
+}
+
+.chat-window {
+  flex: 1;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 320px;
+  max-height: 480px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #eaeaea;
+}
+
+.empty-state {
+  margin: auto;
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 280px;
+}
+
+.bubble-row {
+  display: flex;
+}
+
+.bubble-row.user {
+  justify-content: flex-end;
+}
+
+.bubble-row.bot {
+  justify-content: flex-start;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 78%;
+  line-height: 1.4;
+  font-size: 0.92rem;
+  white-space: pre-wrap;
+}
+
+.bubble.user {
+  background: #4a7dff;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble.bot {
+  background: #f0f1f3;
+  color: #222;
+  border-bottom-left-radius: 4px;
+}
+
+.bubble.typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px;
+}
+
+.bubble.typing span {
+  width: 6px;
+  height: 6px;
+  background: #999;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+.bubble.typing span:nth-child(2) { animation-delay: 0.2s; }
+.bubble.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.input-row textarea {
+  flex: 1;
+  resize: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.input-row textarea:focus {
+  border-color: #4a7dff;
+}
+
+.input-row textarea:disabled {
+  background: #f7f7f7;
+  color: #aaa;
+}
+
+.input-row button {
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: #4a7dff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.input-row button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
